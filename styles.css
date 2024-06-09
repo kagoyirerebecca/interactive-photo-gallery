@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'D-DIN-Condensed-Bold';
+    src:url('font/D-DIN-Condensed-Bold.ttf.woff') format('woff'),
+        url('font/D-DIN-Condensed-Bold.ttf.svg#D-DIN-Condensed-Bold') format('svg'),
+        url('font/D-DIN-Condensed-Bold.ttf.eot'),
+        url('font/D-DIN-Condensed-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+ }
+
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+a {
+    text-decoration: none;
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 16.02px;
+    text-align: left;
+    color: #0fa6c1;
+    opacity: 0;
+    transition: all 1s;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;            
+    background-color: black;
+    line-height: 1.5;
+    font-family: 'DINCondensed', sans-serif;
+    font-size: 16px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: nowrap;          
+    justify-content: center;  
+    align-items: center;
+    width: 1178px;
+    height: 588px;
+    gap: 2px;
+    margin: auto;
+}
+
+.gallery-item {
+    height: 588px;
+    width: 293px;               
+    overflow: hidden;             
+    position: relative;
+    background-size: cover;
+}
+
+.gallery-item:hover .overlay  {
+    backdrop-filter: blur(7px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.gallery-item:hover img  {
+    filter: grayscale(100%);
+    transform: scale(1.04);
+}
+
+.gallery-item:hover .contents  {
+    bottom: 10%;
+}
+
+.gallery-item:hover a  {
+    opacity: 1;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.09);
+    position: absolute;
+    top: 0;
+    transition: all 0.7s;
+    
+    /* display: block; */
+    /* box-shadow: inset 0 -5px 2px 0 rgba(0, 0, 0, 0.3); */
+    
+}
+
+.contents {
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    transition: all .3s ease-in;
+
+}
+
+.gallery-item img {
+    width:293px;             
+    height: 588px;           
+    object-fit: cover;  
+    transform: 1s;  
+       
+}
+
+h1.title {
+    font-family: 'DINCondensed';
+    line-height: 38px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    font-family: 'D-DIN-Condensed-Bold';
+    white-space: nowrap;
+    
+}
+
+span.subtitle {
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.02px;
+    text-align: left;
+    color: #fff;
+    opacity: 0.7;
+}
+
+
+
+@media (max-width: 768px) {
+    .gallery {
+        width: 100vw;
+        height: 100%; 
+        gap: 2px;
+    }
+
+    .gallery-item {
+        height: 100%; 
+    }
+    
+    .gallery-item img {
+        width: 100%; 
+        height: 100%; 
+    }
+
+    .contents {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        width: 100vw;
+        height: 100%; 
+        gap: 2px;
+    }
+
+    .gallery-item {
+        height: 100%; 
+    }
+    
+    .gallery-item img {
+        width: 100%; 
+        height: 100%; 
+    }
+
+    .contents {
+        display: none;
+    }
+}
+
